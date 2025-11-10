@@ -1,0 +1,168 @@
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  background-image: url('../../assets/imgs/elelogin.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.logo {
+  width: 75px;
+  height: auto;
+  position: absolute;
+  top: 25px;
+  left: 35px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-side img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.login-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  background: transparent;
+}
+
+.login-side h2 {
+  font-size: 2.8rem;
+  color: #0c0c0c;
+  margin-bottom: 8px;
+}
+
+.login-side h2 span,
+.login-side h2 strong {
+  color: #001f4d;
+}
+
+.login-side p {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  text-shadow: #000;
+}
+
+.formulario {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #001f4d;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 2px #001f4d inset;
+}
+
+.botao {
+  width: 100%;
+  background-color: #001f4d;
+  color: #fff;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  background-color: #123a82;
+  transform: translateY(-2px);
+}
+
+.register {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.register a {
+  color: #001f4d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+.alerta_erro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+}
+
+.card_erro {
+  display: none;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 20px;
+  border: 1px solid #f5c6cb;
+  border-radius: 0 0 5px 5px;
+  margin: 0 auto;
+  width: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loading-div {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#loading-gif {
+  width: 40px;
+}

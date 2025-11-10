@@ -1,0 +1,59 @@
+body {
+    overflow: hidden;
+    min-height: 100vh;
+
+    background-image: url('../../assets/imgs/elehome.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.banner-hero {
+    width: 95%;
+    max-width: 1500px;
+    margin: 2% auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.banner-content h1 {
+    color: #0E294A;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.banner-content p {
+    color: #4a4a4a;
+    font-size: 25px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+
+
+.button-saiba-mais {
+    background-color: #0E294A;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.button-saiba-mais:hover {
+    background-color: #1A365B;
+    color: white;
+}

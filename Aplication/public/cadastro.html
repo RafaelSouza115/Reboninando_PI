@@ -1,71 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>AquaTech | Cadastro</title>
-
-  <script src="./js/sessao.js"></script>
-
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | Rebobinando</title>
+  <link rel="stylesheet" href="./style/aplication/cadastro.css">
+  <link rel="stylesheet" href="./style/aplication/global.css">
 </head>
 
-<body onload="listar()">
-
-
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
-      </div>
+<body>
+  <a href="index.html">
+    <img src="assets/imgs/logoso.png" alt="Rebobinando Logo" class="logo">
+  </a>
+  <div class="container">
+    <!-- Lado da imagem -->
+    <div class="image-side">
+      <img src="./assets/imgs/piaocadastro.png" alt="Logo Rebobinando Grande">
     </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+
+    <!-- Lado do cadastro -->
+    <div class="login-side">
+      <h2>Bem-vindo venha <span>Rebobinar!</span></h2>
+      <p>Acompanhe sua cave de barris e a qualidade dos seus vinho no seu maior pontêncial!</p>
+
+      <form class="formulario">
+        <div class="input-group">
+          <span>Nome</span>
+          <input type="text" placeholder="Digite seu nome...">
         </div>
 
-        <div id="div_erros_login"></div>
-      </div>
+        <div class="input-group">
+          <span>Email</span>
+          <input type="email" placeholder="Digite o seu email...">
+        </div>
+
+        <div class="input-group">
+          <span>Senha</span>
+          <input type="password" placeholder="Digite o sua senha...">
+        </div>
+
+        <div class="input-group">
+          <span>Confirme a senha</span>
+          <input type="password" placeholder="Confirme sua senha...">
+        </div>
+
+        <button onclick="cadastrar()" type="submit" class="botao">Cadastrar</button>
+
+        <p class="register">Já tem conta? <a href="./login.html">Entrar</a></p>
+      </form>
     </div>
   </div>
-
 </body>
 
 </html>
+
+
 
 <script>
 
