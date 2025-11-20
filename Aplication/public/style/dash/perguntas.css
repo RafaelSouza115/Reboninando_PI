@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-image: url('../../assets/imgs/fundolongincasd_upscayl_2x_upscayl-standard-4x.png');
+    background-size: cover;
+    background-position: center center;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.principal {
+    width: 85%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--fundo);
+    position: relative
+}
+
+.containerQuiz {
+    width: 80%;
+    max-width: 800px;
+    padding: 25px;
+    background-color: var(--fundo);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tituloPergunta {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#alternativas {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 12px;
+    width: 100%;
+}
+
+.alternativa {
+    background-color: var(--fundo-div);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 18px;
+}
+
+.alternativa:hover {
+    transform: scale(1.03);
+}
+
+#btnProxima,
+#btnReiniciar {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: var(--botao);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#btnProxima:hover,
+#btnReiniciar:hover {
+    background-color: var(--trans-botao);
+    transform: scale(1.05);
+}
+
+#painelFinal {
+    text-align: center;
+}

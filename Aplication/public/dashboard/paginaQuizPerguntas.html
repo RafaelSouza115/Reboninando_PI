@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/dash/nav.css">
+    <link rel="stylesheet" href="../style/dash/perguntas.css">
+
+    <title>Rebobinando | Quiz</title>
+</head>
+
+<body>
+    <div class="principal">
+
+        <!-- Painel do jogo (invisível até iniciar) -->
+        <div id="painelJogo" style="display: block;">
+            <h2 id="tituloPergunta"></h2>
+
+            <div id="alternativas"></div>
+
+            <button id="btnProxima" style="display:none;">Próxima</button>
+        </div>
+
+        <!-- Painel final -->
+        <div id="painelFinal" style="display: none;">
+            <h2>Resultado Final</h2>
+
+            <p>Acertos: <span id="spanCertas"></span></p>
+            <p>Erros: <span id="spanErradas"></span></p>
+            <p>Pontuação: <span id="spanPontuacaoFinal"></span></p>
+
+            <button id="btnReiniciar">Tentar Novamente</button>
+        </div>
+
+    </div>
+
+    <script src="../js/quiz.js"></script>
+</body>
+<script>
+    let questoes = [
+    {
+        pergunta: "Quando os Tribalistas se reuniram pela primeira vez?",
+        alternativas: ["1998", "2002", "2006", "2010"],
+        correta: 1
+    },
+    {
+        pergunta: "Qual desses NÃO é integrante dos Tribalistas?",
+        alternativas: ["Marisa Monte", "Arnaldo Antunes", "Carlinhos Brown", "Djavan"],
+        correta: 3
+    }
+];
+
+let indice = 0;
+let acertos = 0;
+let erros = 0;
+
+const tituloPergunta = document.getElementById("tituloPergunta");
+const alternativasDiv = document.getElementById("alternativas");
+const btnProxima = document.getElementById("btnProxima");
+
+const painelJogo = document.getElementById("painelJogo");
+const painelFinal = document.getElementById("painelFinal");
+
+carregarPergunta(); // ⚠ começa automático aqui!
+
+function carregarPergunta() {
+    let q = questoes[indice];
+
+    tituloPergunta.innerText = q.pergunta;
+    alternativasDiv.innerHTML = "";
+    btnProxima.style.display = "none";
+
+    q.alternativas.forEach((texto, i) => {
+        let alt = document.createElement("div");
+        alt.className = "alternativa";
+        alt.innerText = texto;
+
+        alt.onclick = () => escolher(i);
+
+        alternativasDiv.appendChild(alt);
+    });
+}
+
+function escolher(i) {
+    let q = questoes[indice];
+
+    if (i === q.correta) acertos++;
+    else erros++;
+
+    btnProxima.style.display = "block";
+}
+
+btnProxima.onclick = () => {
+    indice++;
+
+    if (indice >= questoes.length) {
+        finalizar();
+    } else {
+        carregarPergunta();
+    }
+};
+
+function finalizar() {
+    painelJogo.style.display = "block";
+    painelFinal.style.display = "block";
+
+    document.getElementById("spanCertas").innerText = acertos;
+    document.getElementById("spanErradas").innerText = erros;
+    document.getElementById("spanPontuacaoFinal").innerText = acertos * 10;
+}
+
+document.getElementById("btnReiniciar").onclick = () => {
+     window.location.href = "quiz.html";
+};
+
+</script>
+</html>
